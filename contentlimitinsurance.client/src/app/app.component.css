@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
+.header {
+  height: 5vh; 
+}
+
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  height: 2vh;
+  padding-bottom: 5px;
+  color: #005cbb;
+}
+
+h3 {
+  color: #005cbb;
+}
+
+

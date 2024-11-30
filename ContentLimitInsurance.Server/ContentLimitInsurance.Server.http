@@ -1,0 +1,6 @@
+@ContentLimitInsurance.Server_HostAddress = http://localhost:5095
+
+GET {{ContentLimitInsurance.Server_HostAddress}}/content/
+Accept: application/json
+
+###

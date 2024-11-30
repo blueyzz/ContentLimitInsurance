@@ -1,0 +1,61 @@
+<form>
+  <h3>Add Items</h3>
+  <mat-form-field>
+    <mat-label>Item Name</mat-label>
+    <input name="Name" matInput [(ngModel)]="addItem.Name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Value</mat-label>
+    <input name="value" type="number" matInput [(ngModel)]="addItem.Value" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-select [(value)]="selectedCategory">
+      @for (category of categories; track category) {
+      <mat-option [value]="category">{{category.Name}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <div style="display: contents;">
+    <button mat-flat-button color="primary" (click)="add()" aria-label="Add Item Button">
+      Add
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</form>
+
+<h3 class="content">View Items</h3>
+<div *ngIf="displayContent; else message">
+  <div class="content-list">
+    <div *ngFor="let category of content.Categories">
+      <div class="category" style="">
+        <div>
+          {{category.Name}}
+        </div>
+        <div>
+          {{ category.DisplayCategoryTotal}}
+        </div>
+      </div>
+      <div class="item" *ngFor="let item of category.Items">
+        <div class="item-name">{{item.Name}}</div>
+        <div class="item-value">{{item.DisplayValue}}</div>
+        <div>
+          <button mat-mini-fab (click)="delete(item.ItemID)"  matTooltip="Delete item" aria-label="Delete Item Button">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <div>
+        Total
+      </div>
+      <div>
+        {{content.DisplayTotal}}
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #message>
+  <div>No Items found</div>
+</ng-template>

@@ -1,0 +1,73 @@
+form {
+  position: relative;
+  margin-top: 10vh;
+  margin-left: 10vh;
+}
+
+mat-form-field {
+  margin-right: 5px;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 400px;
+  margin-left: 10;
+  font-family: Arial, sans-serif;
+}
+
+.category {
+  font-weight: bold;
+}
+
+.item {
+  padding-left: 20px;
+  width: 40vh;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+h3 {
+  color: #005cbb;
+}
+.content {
+  color: #005cbb;
+  margin-left: 10vh;
+}
+
+.content-list {
+  float: left;
+  margin-left: 10vh;
+  width: 50vh;
+  font-size: larger;
+}
+
+.category {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-name {
+  flex-grow: 1;
+}
+
+
+.item-value {
+  flex-shrink: 0;
+  text-align: right;
+  margin-right: 10px;
+}

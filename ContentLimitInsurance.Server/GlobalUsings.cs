@@ -1,0 +1,10 @@
+﻿global using AutoMapper;
+global using System.Text.Json;
+global using ContentLimitInsurance.Service;
+global using Microsoft.AspNetCore.Mvc;
+global using ContentLimitInsurance.Repository;
+global using ContentLimitInsurance.Server.Profiles;
+global using ContentLimitInsurance.Core;
+global using Microsoft.EntityFrameworkCore;
+global using ContentLimitInsurance.Core.Entities;
+global using ContentLimitInsurance.Service.Models;
