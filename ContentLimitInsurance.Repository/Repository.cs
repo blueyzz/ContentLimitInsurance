@@ -16,7 +16,7 @@ public class Repository : IRepository
 
     public void Add<T>(T entity) where T : class
     {
-        Entities.Set<T>().AddAsync(entity);
+        Entities.Set<T>().Add(entity);
     }
 
     public void Update<T>(T entity) where T : class
@@ -24,18 +24,17 @@ public class Repository : IRepository
         Entities.Set<T>().Update(entity);
     }
 
-    public void Delete<T>(int id, CancellationToken cancellationToken = default) where T : class
+    public void Delete<T>(int id) where T : class
     {
         var entity = Entities.Set<T>().Find(id); 
         if (entity == null)
             throw new ArgumentNullException(nameof(entity), "Entity not found");
         Entities.Set<T>().Remove(entity);
-        Entities.SaveChangesAsync(cancellationToken);
     }
 
-    public void Save(CancellationToken cancellationToken = default)
+    public void Save()
     {
-        Entities.SaveChangesAsync(cancellationToken);
+        Entities.SaveChanges();
     }
 
     public bool Any<T>() where T : class
