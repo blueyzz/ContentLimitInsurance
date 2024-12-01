@@ -75,10 +75,9 @@ export class ContentComponent implements OnInit {
 
     this.httpProviderService.addItem(this.addItem).subscribe(
       (data: any) => {
-        if (data != null && data.body != null) {
+        if (data != null && data.body != null && data.body) {
+          this.reset();
           this.loadContents();
-          this.name = '';
-          this.value = 0;
         }
       });
   }
@@ -91,10 +90,21 @@ export class ContentComponent implements OnInit {
   if (confirm("Are you sure you want to delete this item?")) {
       this.httpProviderService.deleteItem(itemID).subscribe(
         (data: any) => {
-          if (data != null && data.body != null) {
+          if (data != null && data.body != null && data.body) {
             this.loadContents();
           }
         });
     }
+  }
+
+
+  /*
+   * Reset Form Fields
+   */
+  reset() {
+    this.addItem.Name = '';
+    this.addItem.Value = 0;
+    this.addItem.CategoryID = 0;
+    this.selectedCategory = new Category();
   }
 }

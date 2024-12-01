@@ -44,7 +44,7 @@ public class ItemService : IItemService
     public virtual bool Delete(int itemID)
     {
         Repository.Delete<Item>(itemID);
-        // Repository.Save();
+        Repository.Save();
         return true;
     }
 }
